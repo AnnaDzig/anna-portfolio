@@ -10,7 +10,16 @@
   --color-border: #f1d9df;
   --color-surface-soft: #fff1f4;
 }
+* {
+  outline: 1px solid red;
+}
+html {
+  scroll-behavior: smooth;
+}
 
+body {
+  margin: 0 auto;
+}
 *,
 *::before,
 *::after {

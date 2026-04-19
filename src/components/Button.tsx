@@ -9,7 +9,9 @@ export default function Button({
   variant = 'primary',
   href,
 }: ButtonProps) {
-  const baseClasses = 'rounded-full px-6 py-3 font-medium transition';
+  const baseClasses =
+    'inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition sm:w-auto sm:px-6';
+
   const variants = {
     primary: 'bg-primary text-white hover:opacity-90',
     secondary:

@@ -1,24 +1,20 @@
 import Container from '../components/Container';
 import Button from '../components/Button';
+import SectionIntro from '../components/SectionIntro';
 
 export default function Contact() {
   return (
-    <section id="contact" className="scroll-mt-24bg-white py-24 text-text">
+    <section
+      id="contact"
+      className="scroll-mt-24bg-white py-16 sm:py-20 lg:py-24 text-text"
+    >
       <Container>
         <div className="flex max-w-3xl flex-col gap-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-dark">
-            Contact
-          </p>
-
-          <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
-            Let’s build something meaningful together
-          </h2>
-
-          <p className="text-lg leading-8 text-text-soft">
-            I’m open to frontend and full-stack opportunities where I can
-            contribute to thoughtful products, clean user experiences, and
-            scalable solutions.
-          </p>
+          <SectionIntro
+            eyebrow="Contact"
+            title="Let’s build something meaningful together"
+            description="I’m open to frontend and full-stack opportunities where I can contribute to thoughtful products, clean user experiences, and scalable solutions."
+          />
 
           <div className="flex flex-col gap-4 text-base text-text-soft">
             <a
