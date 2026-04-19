@@ -3,10 +3,10 @@ import Button from '../components/Button';
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-white py-24 text-[#2d1f26]">
+    <section id="contact" className="scroll-mt-24bg-white py-24 text-text">
       <Container>
         <div className="flex max-w-3xl flex-col gap-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d97c95]">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-dark">
             Contact
           </p>
 
@@ -14,16 +14,16 @@ export default function Contact() {
             Let’s build something meaningful together
           </h2>
 
-          <p className="text-lg leading-8 text-[#6e5a63]">
+          <p className="text-lg leading-8 text-text-soft">
             I’m open to frontend and full-stack opportunities where I can
             contribute to thoughtful products, clean user experiences, and
             scalable solutions.
           </p>
 
-          <div className="flex flex-col gap-4 text-base text-[#6e5a63]">
+          <div className="flex flex-col gap-4 text-base text-text-soft">
             <a
               href="mailto:anna.soft.dev@gmail.com"
-              className="hover:text-[#d97c95]"
+              className="hover:text-primary-dark"
             >
               anna.soft.dev@gmail.com
             </a>
@@ -32,7 +32,7 @@ export default function Contact() {
               href="https://github.com/AnnaDzig"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-[#d97c95]"
+              className="hover:text-primary-dark"
             >
               GitHub
             </a>
@@ -41,7 +41,7 @@ export default function Contact() {
               href="https://www.linkedin.com/in/ann-dzhyhota/"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-[#d97c95]"
+              className="hover:text-primary-dark"
             >
               LinkedIn
             </a>

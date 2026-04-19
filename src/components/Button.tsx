@@ -11,9 +11,9 @@ export default function Button({
 }: ButtonProps) {
   const baseClasses = 'rounded-full px-6 py-3 font-medium transition';
   const variants = {
-    primary: 'bg-[#efa6b8] text-white hover:opacity-90',
+    primary: 'bg-primary text-white hover:opacity-90',
     secondary:
-      'border border-[#f1d9df] bg-white text-[#2d1f26] hover:bg-[#fff1f4]',
+      'border border-border bg-surface text-text hover:bg-surface-soft',
   };
 
   const className = `${baseClasses} ${variants[variant]}`;

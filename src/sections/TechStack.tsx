@@ -3,11 +3,11 @@ import { techStack } from '../data/techStack';
 
 export default function TechStack() {
   return (
-    <section id="tech" className="bg-[#fff9f8] py-24 text-[#2d1f26]">
+    <section id="tech" className="scroll-mt-24bg-[#fff9f8] py-24 text-text">
       <Container>
         <div className="flex flex-col gap-12">
           <div className="flex max-w-3xl flex-col gap-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d97c95]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-dark">
               Tech Stack
             </p>
 
@@ -15,7 +15,7 @@ export default function TechStack() {
               Technologies I use to build modern web and mobile products
             </h2>
 
-            <p className="text-lg leading-8 text-[#6e5a63]">
+            <p className="text-lg leading-8 text-text-soft">
               I enjoy working across frontend, mobile, and backend development,
               choosing tools that help create clean, scalable, and user-friendly
               applications.
@@ -25,7 +25,7 @@ export default function TechStack() {
             {techStack.map((group) => (
               <div
                 key={group.title}
-                className="rounded-3xl border border-[#f1d9df] bg-white p-6 shadow-sm"
+                className="rounded-3xl border-border bg-white p-6 shadow-sm"
               >
                 <h3 className="text-xl font-semibold">{group.title}</h3>
 
@@ -33,7 +33,7 @@ export default function TechStack() {
                   {group.items.map((item) => (
                     <li
                       key={item}
-                      className="rounded-full bg-[#fff1f4] px-4 py-2 text-sm font-medium text-[#6e5a63]"
+                      className="rounded-full bg-surface-soft px-4 py-2 text-sm font-medium text-text-soft"
                     >
                       {item}
                     </li>

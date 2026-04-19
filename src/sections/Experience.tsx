@@ -3,11 +3,14 @@ import { experience } from '../data/experience';
 
 export default function Experience() {
   return (
-    <section id="experience" className="bg-[#fff9f8] py-24 text-[#2d1f26]">
+    <section
+      id="experience"
+      className="scroll-mt-24 bg-background py-24 text-text"
+    >
       <Container>
         <div className="flex flex-col gap-12">
           <div className="flex max-w-3xl flex-col gap-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d97c95]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-dark">
               Experience
             </p>
 
@@ -16,7 +19,7 @@ export default function Experience() {
               problem-solving
             </h2>
 
-            <p className="text-lg leading-8 text-[#6e5a63]">
+            <p className="text-lg leading-8 text-text-soft">
               My background combines real product development, frontend and
               mobile engineering, and an earlier analytical career that shaped
               how I approach structure, detail, and responsibility.
@@ -32,17 +35,17 @@ export default function Experience() {
                 <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                   <div className="flex flex-col gap-2">
                     <h3 className="text-2xl font-semibold">{item.role}</h3>
-                    <p className="text-base font-medium text-[#d97c95]">
+                    <p className="text-base font-medium text-primary-dark">
                       {item.company}
                     </p>
                   </div>
 
-                  <p className="text-sm font-medium text-[#6e5a63]">
+                  <p className="text-sm font-medium text-text-soft">
                     {item.period}
                   </p>
                 </div>
 
-                <p className="mt-4 max-w-3xl text-base leading-7 text-[#6e5a63]">
+                <p className="mt-4 max-w-3xl text-base leading-7 text-text-soft">
                   {item.description}
                 </p>
               </article>
