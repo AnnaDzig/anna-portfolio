@@ -19,7 +19,7 @@ export default function Hero() {
 
           <div className="flex flex-col gap-4 pt-4 sm:flex-row">
             <Button href="#projects">View Projects</Button>
-            <Button href="#about" variant="secondary">
+            <Button href="#contact" variant="secondary">
               Contact Me
             </Button>
           </div>
