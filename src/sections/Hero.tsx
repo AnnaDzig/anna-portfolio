@@ -1,4 +1,5 @@
 import Container from '../components/Container';
+import Button from '../components/Button';
 export default function Hero() {
   return (
     <section className="min-h-screen bg-[#fff9f8] px-6 py-16 text-[#2d1f26]">
@@ -17,13 +18,10 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col gap-4 pt-4 sm:flex-row">
-            <button className="rounded-full bg-[#efa6b8] px-6 py-3 font-medium text-white transition hover:opacity-90">
-              View Projects
-            </button>
-
-            <button className="rounded-full border border-[#f1d9df] bg-white px-6 py-3 font-medium text-[#2d1f26] transition hover:bg-[#fff1f4]">
+            <Button href="#projects">View Projects</Button>
+            <Button href="#contact" variant="secondary">
               Contact Me
-            </button>
+            </Button>
           </div>
         </div>
       </Container>
