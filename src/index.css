@@ -1,14 +1,39 @@
 @import 'tailwindcss';
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+/* runtime values */
+:root {
+  --background: #fff9f8;
+  --surface: #ffffff;
+  --surface-soft: #fff1f4;
+  --text: #2d1f26;
+  --text-soft: #6e5a63;
+  --primary: #efa6b8;
+  --primary-strong: #c98497;
+  --border: #f1d9df;
+}
+
+[data-theme='dark'] {
+  --background: #140f13;
+  --surface: #1d161b;
+  --surface-soft: #2a1f27;
+  --text: #f8e9ee;
+  --text-soft: #d7bcc6;
+  --primary: #f0a8bb;
+  --primary-strong: #ff8eae;
+  --border: #4c3741;
+}
+
+/* Tailwind utility tokens */
 @theme {
-  --color-background: #fff9f8;
-  --color-surface: #ffffff;
-  --color-text: #2d1f26;
-  --color-text-soft: #6e5a63;
-  --color-primary: #efa6b8;
-  --color-primary-dark: #d97c95;
-  --color-border: #f1d9df;
-  --color-surface-soft: #fff1f4;
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-soft: var(--surface-soft);
+  --color-text: var(--text);
+  --color-text-soft: var(--text-soft);
+  --color-primary: var(--primary);
+  --color-primary-strong: var(--primary-strong);
+  --color-border: var(--border);
 }
 
 html {
@@ -17,10 +42,18 @@ html {
 
 body {
   margin: 0 auto;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background-color: var(--background);
+  color: var(--text);
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
 }
-*,
-*::before,
-*::after {
+
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -32,12 +65,6 @@ html,
 body,
 #root {
   min-height: 100%;
-}
-
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
 img,

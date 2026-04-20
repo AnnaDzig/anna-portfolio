@@ -7,11 +7,11 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="scroll-mt-24bg-white py-16 sm:py-20 lg:py-24 text-text"
+      className="scroll-mt-24 bg-background py-16 text-text sm:py-20 lg:py-24"
     >
       <Container>
         <div className="flex flex-col gap-12">
-          <div className="flex max-w-3xl flex-col gap-4">
+          <div className="max-w-3xl">
             <SectionIntro
               eyebrow="Selected Projects"
               title="Projects that reflect how I think, build, and solve problems"
@@ -23,15 +23,15 @@ export default function Projects() {
             {projects.map((project) => (
               <article
                 key={project.title}
-                className="flex h-full flex-col rounded-3xl border border-[#f1d9df] bg-[#fff9f8] p-4 sm:p-6 shadow-sm"
+                className="flex h-full flex-col rounded-[2rem] border border-border bg-surface p-5 shadow-sm transition-transform duration-300 hover:-translate-y-1 sm:p-6"
               >
                 <div className="flex flex-1 flex-col gap-5">
                   <div className="flex flex-col gap-3">
-                    <h3 className="text-xl sm:text-2xl font-semibold">
+                    <h3 className="text-xl font-semibold text-text sm:text-2xl">
                       {project.title}
                     </h3>
 
-                    <p className="text-sm leading-6 sm:text-base sm:leading-7 text-[#6e5a63]">
+                    <p className="text-sm leading-6 text-text-soft sm:text-base sm:leading-7">
                       {project.description}
                     </p>
                   </div>
@@ -40,7 +40,7 @@ export default function Projects() {
                     {project.stack.map((item) => (
                       <li
                         key={item}
-                        className="rounded-full bg-white px-4 py-2 text-sm font-medium text-text-soft"
+                        className="rounded-full bg-surface-soft px-4 py-2 text-sm font-medium text-text-soft"
                       >
                         {item}
                       </li>
