@@ -1,4 +1,5 @@
 import Container from '../components/Container';
+import Reveal from '../components/Reveal';
 import SectionIntro from '../components/SectionIntro';
 import { experience } from '../data/experience';
 
@@ -9,6 +10,7 @@ export default function Experience() {
       className="scroll-mt-24 bg-background py-16 text-text sm:py-20 lg:py-24"
     >
       <Container>
+        <Reveal>
         <div className="flex flex-col gap-12">
           <div className="max-w-3xl">
             <SectionIntro
@@ -53,7 +55,8 @@ export default function Experience() {
               </article>
             ))}
           </div>
-        </div>
+          </div>
+          </Reveal>
       </Container>
     </section>
   );

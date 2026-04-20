@@ -1,4 +1,5 @@
 import Container from '../components/Container';
+import Reveal from '../components/Reveal';
 import SectionIntro from '../components/SectionIntro';
 import { techStack } from '../data/techStack';
 
@@ -9,15 +10,17 @@ export default function TechStack() {
       className="scroll-mt-24 bg-background py-16 text-text sm:py-20 lg:py-24"
     >
       <Container>
-        <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-12">
+            <Reveal>
           <SectionIntro
             eyebrow="Tech Stack"
             title="Technologies I use to build modern web and mobile products"
             description="I enjoy working across frontend, mobile, and backend development, choosing tools that help create clean, scalable, and user-friendly applications."
-          />
-
+            />
+          </Reveal>
           <div className="grid gap-6 md:grid-cols-2">
-            {techStack.map((group) => (
+                  {techStack.map((group, index) => (
+              <Reveal key={group.title} delay={index * 0.08}>
               <article
                 key={group.title}
                 className="rounded-[2rem] border border-border bg-surface p-5 shadow-sm transition-transform duration-300 hover:-translate-y-1 sm:p-6"
@@ -35,11 +38,13 @@ export default function TechStack() {
                       {item}
                     </li>
                   ))}
-                </ul>
-              </article>
+                        </ul>
+                        
+                      </article>
+              </Reveal>
             ))}
           </div>
-        </div>
+          </div>
       </Container>
     </section>
   );

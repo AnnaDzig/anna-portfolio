@@ -1,4 +1,5 @@
 import Container from '../components/Container';
+import Reveal from '../components/Reveal';
 import SectionIntro from '../components/SectionIntro';
 
 export default function About() {
@@ -8,6 +9,7 @@ export default function About() {
       className="scroll-mt-24 bg-background py-16 text-text sm:py-20 lg:py-24"
     >
       <Container>
+         <Reveal>
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
           <div className="rounded-[2rem] border border-border bg-surface p-6 shadow-sm sm:p-8 lg:p-10">
             <SectionIntro
@@ -54,7 +56,8 @@ export default function About() {
               </p>
             </div>
           </aside>
-        </div>
+          </div>
+          </Reveal>
       </Container>
     </section>
   );

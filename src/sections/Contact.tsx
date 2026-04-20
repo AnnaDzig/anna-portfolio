@@ -1,6 +1,7 @@
 import Container from '../components/Container';
 import Button from '../components/Button';
 import SectionIntro from '../components/SectionIntro';
+import Reveal from '../components/Reveal';
 
 export default function Contact() {
   return (
@@ -9,6 +10,7 @@ export default function Contact() {
       className="scroll-mt-24 bg-background py-16 text-text sm:py-20 lg:py-24"
     >
       <Container>
+        <Reveal>
         <div className="mx-auto max-w-5xl">
           <div className="rounded-[2rem] border border-border bg-surface p-6 shadow-sm sm:p-8 lg:p-10">
             <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
@@ -55,6 +57,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
+        </Reveal>
       </Container>
     </section>
   );
