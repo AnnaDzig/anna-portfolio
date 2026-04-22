@@ -25,10 +25,10 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 px-4 pt-4">
-      <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-border/80 bg-white/80 px-4 py-3 shadow-[0_10px_40px_rgba(45,31,38,0.08)] backdrop-blur-xl md:px-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-border/80 bg-surface/80 px-4 py-3 shadow-[0_10px_40px_rgba(45,31,38,0.08)] backdrop-blur-xl md:px-6">
         <a
           href="#hero"
-          className="text-sm font-semibold tracking-[0.2em] text-text uppercase"
+          className="min-w-0 truncate text-sm font-semibold uppercase tracking-[0.2em] text-text"
         >
           Anna Dzhyhota
         </a>
@@ -47,59 +47,106 @@ export default function Header() {
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
+
           <a
             href="#contact"
-            className="hidden md:inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-primary-dark"
-  >
+            className="hidden md:inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-primary-strong"
+          >
             Let’s talk
           </a>
-        </div>
 
-        <button
-          type="button"
-          onClick={() => setIsOpen((prev) => !prev)}
-          aria-expanded={isOpen}
-          aria-label="Toggle menu"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-white md:hidden"
-        >
-          <div className="flex flex-col gap-1.5">
-            <span
-              className={`h-0.5 w-5 rounded bg-text transition ${isOpen ? 'translate-y-2 rotate-45' : ''}`}
-            />
-            <span
-              className={`h-0.5 w-5 rounded bg-text transition ${isOpen ? 'opacity-0' : ''}`}
-            />
-            <span
-              className={`h-0.5 w-5 rounded bg-text transition ${isOpen ? '-translate-y-2 -rotate-45' : ''}`}
-            />
-          </div>
-        </button>
+          {!isOpen && (
+            <button
+              type="button"
+              onClick={() => setIsOpen(true)}
+              aria-expanded={false}
+              aria-label="Open menu"
+              className="relative flex h-11 w-11 items-center justify-center rounded-full bg-surface md:hidden"
+            >
+              <span className="absolute h-0.5 w-5 -translate-y-1.5 rounded-full bg-text transition-all duration-300" />
+              <span className="absolute h-0.5 w-5 rounded-full bg-text transition-all duration-300" />
+              <span className="absolute h-0.5 w-5 translate-y-1.5 rounded-full bg-text transition-all duration-300" />
+            </button>
+          )}
+        </div>
       </div>
 
-      {isOpen && (
-        <div className="fixed inset-0 z-40 bg-[#fff9f8]/95 backdrop-blur-xl md:hidden">
-          <div className="flex min-h-screen flex-col items-center justify-center gap-6 px-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={handleLinkClick}
-                className="text-2xl font-semibold text-text transition hover:text-primary-dark"
-              >
-                {link.label}
-              </a>
-            ))}
+      <div className="md:hidden">
+        <div
+          className={`fixed inset-0 z-[80] transition-opacity duration-500 ${
+            isOpen
+              ? 'pointer-events-auto opacity-100'
+              : 'pointer-events-none opacity-0'
+          }`}
+        >
+          <div className="absolute inset-0 overflow-hidden">
+            <div
+              className={`absolute right-4 top-4 h-11 w-11 rounded-full bg-primary transition-transform duration-[1400ms] ease-[cubic-bezier(0.19,1,0.22,1)] ${
+                isOpen ? 'scale-[180]' : 'scale-0'
+              }`}
+            />
+          </div>
 
-            <a
-              href="#contact"
-              onClick={handleLinkClick}
-              className="mt-4 inline-flex rounded-full bg-primary px-6 py-3 text-base font-semibold text-white"
-            >
-              Contact me
-            </a>
+          <button
+            type="button"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close menu"
+            className="absolute right-4 top-4 z-[100] flex h-11 w-11 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm"
+          >
+            <span className="absolute h-0.5 w-5 rotate-45 rounded-full bg-white" />
+            <span className="absolute h-0.5 w-5 -rotate-45 rounded-full bg-white" />
+          </button>
+
+          <div className="relative z-[90] flex min-h-screen items-center justify-center px-6">
+            <nav>
+              <ul className="flex flex-col items-center gap-6">
+                {navLinks.map((link, index) => (
+                  <li
+                    key={link.href}
+                    className={`transition-all duration-500 ${
+                      isOpen
+                        ? 'translate-y-0 opacity-100'
+                        : 'translate-y-6 opacity-0'
+                    }`}
+                    style={{
+                      transitionDelay: isOpen ? `${index * 90 + 260}ms` : '0ms',
+                    }}
+                  >
+                    <a
+                      href={link.href}
+                      onClick={handleLinkClick}
+                      className="text-3xl font-semibold text-white transition hover:opacity-80"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+
+                <li
+                  className={`mt-4 transition-all duration-500 ${
+                    isOpen
+                      ? 'translate-y-0 opacity-100'
+                      : 'translate-y-6 opacity-0'
+                  }`}
+                  style={{
+                    transitionDelay: isOpen
+                      ? `${navLinks.length * 90 + 320}ms`
+                      : '0ms',
+                  }}
+                >
+                  <a
+                    href="#contact"
+                    onClick={handleLinkClick}
+                    className="inline-flex rounded-full border border-white/20 bg-white/15 px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
+                  >
+                    Let’s talk
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }
