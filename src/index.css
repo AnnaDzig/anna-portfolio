@@ -46,6 +46,25 @@
   --color-primary-deep: var(--primary-deep);
 }
 
+@keyframes shimmerMove {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 70%
+  );
+  animation: shimmerMove 2.8s ease-in-out infinite;
+}
+
 html {
   scroll-behavior: smooth;
 }
