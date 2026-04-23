@@ -8,9 +8,13 @@
   --surface-soft: #fff1f4;
   --text: #2d1f26;
   --text-soft: #6e5a63;
-  --primary: #efa6b8;
-  --primary-strong: #c98497;
   --border: #f1d9df;
+
+  --primary: #efa6b8;
+  --primary-soft: #f8d6df;
+  --primary-strong: #d97f98;
+  --primary-deep: #b85f79;
+  --primary-ring: rgba(217, 127, 152, 0.28);
 }
 
 [data-theme='dark'] {
@@ -19,11 +23,14 @@
   --surface-soft: #2a1f27;
   --text: #f8e9ee;
   --text-soft: #d7bcc6;
-  --primary: #f0a8bb;
-  --primary-strong: #ff8eae;
   --border: #4c3741;
-}
 
+  --primary: #f0a8bb;
+  --primary-soft: #3a2831;
+  --primary-strong: #ff8eae;
+  --primary-deep: #ff6f98;
+  --primary-ring: rgba(255, 142, 174, 0.3);
+}
 /* Tailwind utility tokens */
 @theme {
   --color-background: var(--background);
@@ -31,9 +38,12 @@
   --color-surface-soft: var(--surface-soft);
   --color-text: var(--text);
   --color-text-soft: var(--text-soft);
-  --color-primary: var(--primary);
-  --color-primary-strong: var(--primary-strong);
   --color-border: var(--border);
+
+  --color-primary: var(--primary);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-strong: var(--primary-strong);
+  --color-primary-deep: var(--primary-deep);
 }
 
 html {
@@ -53,7 +63,9 @@ body {
     border-color 200ms ease;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
