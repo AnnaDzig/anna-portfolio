@@ -1,10 +1,9 @@
-import { Monitor, Moon, Sun } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 import { useThemeMode } from '../hooks/useThemeMode';
 
 const items = [
   { value: 'light', label: 'Light', icon: Sun },
   { value: 'dark', label: 'Dark', icon: Moon },
-  { value: 'system', label: 'System', icon: Monitor },
 ] as const;
 
 export default function ThemeToggle() {
@@ -24,7 +23,7 @@ export default function ThemeToggle() {
             aria-pressed={isActive}
             className={`inline-flex h-9 w-9 items-center justify-center rounded-full transition ${
               isActive
-                ? 'bg-primary text-white dark:bg-[#f0a8bb] dark:text-[#22171d]'
+                ? 'bg-primary text-primary-deep dark:bg-[#f0a8bb] dark:text-[#22171d]'
                 : 'text-text-soft hover:bg-surface-soft hover:text-text dark:text-[#d6bcc5] dark:hover:bg-[#31242c] dark:hover:text-white'
             }`}
           >

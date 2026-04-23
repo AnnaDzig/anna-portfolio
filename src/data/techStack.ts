@@ -1,21 +1,66 @@
+import type { ComponentType, SVGProps } from 'react';
+
+import CodeIcon from '../assets/icons/code.svg?react';
+import FrontendIcon from '../assets/icons/frontend.svg?react';
+import BackendIcon from '../assets/icons/backend.svg?react';
+import ToolsIcon from '../assets/icons/tools.svg?react';
+import BrainIcon from '../assets/icons/brain.svg?react';
+import SoftSkillsIcon from '../assets/icons/soft-skills.svg?react';
+
+import ReactIcon from '../assets/icons/react.svg?react';
+import NextjsIcon from '../assets/icons/nextjs.svg?react';
+import TypeScriptIcon from '../assets/icons/typescript.svg?react';
+import JavaScriptIcon from '../assets/icons/javascript.svg?react';
+import HtmlIcon from '../assets/icons/html.svg?react';
+import CssIcon from '../assets/icons/css.svg?react';
+import TailwindIcon from '../assets/icons/tailwind.svg?react';
+import NodejsIcon from '../assets/icons/nodejs.svg?react';
+import DotnetIcon from '../assets/icons/dotnet.svg?react';
+import CsharpIcon from '../assets/icons/csharp.svg?react';
+import ApiIcon from '../assets/icons/api.svg?react';
+import FirebaseIcon from '../assets/icons/firebase.svg?react';
+import MongodbIcon from '../assets/icons/mongodb.svg?react';
+import AwsIcon from '../assets/icons/aws.svg?react';
+import GitIcon from '../assets/icons/git.svg?react';
+import GithubIcon from '../assets/icons/github.svg?react';
+import ExpoIcon from '../assets/icons/expo.svg?react';
+import FigmaIcon from '../assets/icons/figma.svg?react';
+import PostmanIcon from '../assets/icons/postman.svg?react';
+import ViteIcon from '../assets/icons/vite.svg?react';
+import DockerIcon from '../assets/icons/docker.svg?react';
+import GisIcon from '../assets/icons/gis.svg?react';
+import DatabaseIcon from '../assets/icons/database.svg?react';
+import ArchitectureIcon from '../assets/icons/architecture.svg?react';
+import UiIcon from '../assets/icons/ui.svg?react';
+import ProblemSolvingIcon from '../assets/icons/problem-solving.svg?react';
+import CommunicationIcon from '../assets/icons/communication.svg?react';
+import TeamworkIcon from '../assets/icons/teamwork.svg?react';
+import AdaptabilityIcon from '../assets/icons/adaptability.svg?react';
+import ResponsibilityIcon from '../assets/icons/responsibility.svg?react';
+import LearningIcon from '../assets/icons/learning.svg?react';
+import VscodeIcon from '../assets/icons/vscode.svg?react';
+import MySQLIcon from '../assets/icons/mysql.svg?react';
+
+export type SkillIcon = ComponentType<SVGProps<SVGSVGElement>>;
+
 export type TechTabKey = 'technical' | 'soft' | 'tools';
 
 export type TechItem = {
   label: string;
-  icon: string;
+  icon: SkillIcon;
   highlighted?: boolean;
 };
 
 export type TechGroup = {
   title: string;
-  icon: string;
+  icon: SkillIcon;
   items: TechItem[];
 };
 
 export type TechTab = {
   key: TechTabKey;
   label: string;
-  icon: string;
+  icon: SkillIcon;
   groups: TechGroup[];
 };
 
@@ -23,57 +68,58 @@ export const techStack: TechTab[] = [
   {
     key: 'technical',
     label: 'Technical',
-    icon: '/src/assets/icons/code.svg',
+    icon: CodeIcon,
     groups: [
       {
         title: 'Frontend',
-        icon: '/src/assets/icons/frontend.svg',
+        icon: FrontendIcon,
         items: [
-          { label: 'React', icon: '/src/assets/icons/react.svg' },
-          { label: 'Next.js', icon: '/src/assets/icons/nextjs.svg' },
-          { label: 'TypeScript', icon: '/src/assets/icons/typescript.svg' },
-          { label: 'JavaScript', icon: '/src/assets/icons/javascript.svg' },
-          { label: 'HTML5', icon: '/src/assets/icons/html.svg' },
-          { label: 'CSS3', icon: '/src/assets/icons/css.svg' },
-          { label: 'Tailwind CSS', icon: '/src/assets/icons/tailwind.svg' },
-          { label: 'React Native', icon: '/src/assets/icons/react.svg' },
+          { label: 'React', icon: ReactIcon },
+          { label: 'Next.js', icon: NextjsIcon },
+          { label: 'TypeScript', icon: TypeScriptIcon },
+          { label: 'JavaScript', icon: JavaScriptIcon },
+          { label: 'HTML5', icon: HtmlIcon },
+          { label: 'CSS3', icon: CssIcon },
+          { label: 'Tailwind CSS', icon: TailwindIcon, highlighted: true },
+          { label: 'React Native', icon: ReactIcon },
         ],
       },
       {
         title: 'Backend',
-        icon: '/src/assets/icons/backend.svg',
+        icon: BackendIcon,
         items: [
-          { label: 'Node.js', icon: '/src/assets/icons/nodejs.svg' },
-          { label: '.NET', icon: '/src/assets/icons/dotnet.svg' },
-          { label: 'C#', icon: '/src/assets/icons/csharp.svg' },
-          { label: 'REST APIs', icon: '/src/assets/icons/api.svg' },
-          { label: 'Firebase', icon: '/src/assets/icons/firebase.svg' },
-          { label: 'MongoDB', icon: '/src/assets/icons/mongodb.svg' },
-          { label: 'AWS', icon: '/src/assets/icons/aws.svg' },
+          { label: 'Node.js', icon: NodejsIcon },
+          { label: '.NET', icon: DotnetIcon },
+          { label: 'C#', icon: CsharpIcon },
+          { label: 'REST APIs', icon: ApiIcon },
+          { label: 'Firebase', icon: FirebaseIcon },
+          { label: 'MongoDB', icon: MongodbIcon },
+          { label: 'AWS', icon: AwsIcon },
+          { label: 'MySQL', icon: MySQLIcon },
         ],
       },
       {
         title: 'Tools & Platforms',
-        icon: '/src/assets/icons/tools.svg',
+        icon: ToolsIcon,
         items: [
-          { label: 'Git', icon: '/src/assets/icons/git.svg' },
-          { label: 'GitHub', icon: '/src/assets/icons/github.svg' },
-          { label: 'Expo', icon: '/src/assets/icons/expo.svg' },
-          { label: 'Figma', icon: '/src/assets/icons/figma.svg' },
-          { label: 'Postman', icon: '/src/assets/icons/postman.svg' },
-          { label: 'Vite', icon: '/src/assets/icons/vite.svg' },
-          { label: 'Docker', icon: '/src/assets/icons/docker.svg' },
-          { label: 'GIS', icon: '/src/assets/icons/gis.svg' },
+          { label: 'Git', icon: GitIcon },
+          { label: 'GitHub', icon: GithubIcon },
+          { label: 'Expo', icon: ExpoIcon },
+          { label: 'Figma', icon: FigmaIcon },
+          { label: 'Postman', icon: PostmanIcon },
+          { label: 'Vite', icon: ViteIcon },
+          { label: 'Docker', icon: DockerIcon },
+          { label: 'GIS', icon: GisIcon },
         ],
       },
       {
         title: 'Learning & Growth',
-        icon: '/src/assets/icons/brain.svg',
+        icon: BrainIcon,
         items: [
-          { label: 'ASP.NET Core', icon: '/src/assets/icons/dotnet.svg' },
-          { label: 'SQLite', icon: '/src/assets/icons/database.svg' },
-          { label: 'Architecture', icon: '/src/assets/icons/architecture.svg' },
-          { label: 'Scalable UI', icon: '/src/assets/icons/ui.svg' },
+          { label: 'ASP.NET Core', icon: DotnetIcon },
+          { label: 'SQLite', icon: DatabaseIcon },
+          { label: 'Architecture', icon: ArchitectureIcon },
+          { label: 'Scalable UI', icon: UiIcon },
         ],
       },
     ],
@@ -81,30 +127,18 @@ export const techStack: TechTab[] = [
   {
     key: 'soft',
     label: 'Soft Skills',
-    icon: '/src/assets/icons/soft-skills.svg',
+    icon: SoftSkillsIcon,
     groups: [
       {
         title: 'Professional Strengths',
-        icon: '/src/assets/icons/soft-skills.svg',
+        icon: SoftSkillsIcon,
         items: [
-          {
-            label: 'Problem Solving',
-            icon: '/src/assets/icons/problem-solving.svg',
-          },
-          {
-            label: 'Communication',
-            icon: '/src/assets/icons/communication.svg',
-          },
-          { label: 'Teamwork', icon: '/src/assets/icons/teamwork.svg' },
-          { label: 'Adaptability', icon: '/src/assets/icons/adaptability.svg' },
-          {
-            label: 'Responsibility',
-            icon: '/src/assets/icons/responsibility.svg',
-          },
-          {
-            label: 'Continuous Learning',
-            icon: '/src/assets/icons/learning.svg',
-          },
+          { label: 'Problem Solving', icon: ProblemSolvingIcon },
+          { label: 'Communication', icon: CommunicationIcon },
+          { label: 'Teamwork', icon: TeamworkIcon },
+          { label: 'Adaptability', icon: AdaptabilityIcon },
+          { label: 'Responsibility', icon: ResponsibilityIcon },
+          { label: 'Continuous Learning', icon: LearningIcon },
         ],
       },
     ],
@@ -112,18 +146,18 @@ export const techStack: TechTab[] = [
   {
     key: 'tools',
     label: 'Tools',
-    icon: '/src/assets/icons/tools.svg',
+    icon: ToolsIcon,
     groups: [
       {
         title: 'Everyday Workflow',
-        icon: '/src/assets/icons/tools.svg',
+        icon: ToolsIcon,
         items: [
-          { label: 'Git', icon: '/src/assets/icons/git.svg' },
-          { label: 'GitHub', icon: '/src/assets/icons/github.svg' },
-          { label: 'Figma', icon: '/src/assets/icons/figma.svg' },
-          { label: 'Postman', icon: '/src/assets/icons/postman.svg' },
-          { label: 'VS Code', icon: '/src/assets/icons/vscode.svg' },
-          { label: 'Expo', icon: '/src/assets/icons/expo.svg' },
+          { label: 'Git', icon: GitIcon },
+          { label: 'GitHub', icon: GithubIcon },
+          { label: 'Figma', icon: FigmaIcon },
+          { label: 'Postman', icon: PostmanIcon },
+          { label: 'VS Code', icon: VscodeIcon },
+          { label: 'Expo', icon: ExpoIcon },
         ],
       },
     ],
