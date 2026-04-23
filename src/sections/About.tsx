@@ -45,7 +45,11 @@ export default function About() {
 
           <Reveal delay={0.08}>
             <div className="mt-12 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-              <article className="rounded-[2rem] border border-border bg-surface/90 p-6 shadow-sm backdrop-blur-sm sm:p-8 lg:p-10">
+              <article
+                className="rounded-[2rem] border border-border bg-surface/90 p-6 shadow-sm backdrop-blur-sm sm:p-8 lg:p-10  transition-all duration-300 ease-out
+  hover:-translate-y-1.5 hover:scale-[1.02]
+  hover:border-primary/40 hover:shadow-[0_16px_40px_var(--primary-ring)]"
+              >
                 <div className="space-y-5 text-base leading-8 text-text-soft sm:text-lg sm:leading-9">
                   <p>
                     I’m a frontend-focused developer based in Denmark. I build
@@ -84,16 +88,13 @@ export default function About() {
   hover:border-primary/40 hover:shadow-[0_16px_40px_var(--primary-ring)]
 "
                   >
-                    {/* gradient hover layer */}
                     <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,var(--primary-soft),transparent_60%)]" />
                     </div>
-
                     <div className="relative">
                       <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-strong">
                         {item.title}
                       </p>
-
                       <p className="mt-3 text-lg font-medium leading-8 text-text">
                         {item.text}
                       </p>
