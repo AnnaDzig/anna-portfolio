@@ -1,5 +1,6 @@
 import Container from '../components/Container';
 import Reveal from '../components/Reveal';
+import SectionIntro from '../components/SectionIntro';
 
 const highlights = [
   {
@@ -20,28 +21,20 @@ export default function About() {
   return (
     <section
       id="about"
-      className="scroll-mt-24 bg-background py-16 text-text sm:py-20 lg:py-24"
+      className="scroll-mt-24 bg-background py-8 text-text sm:py-12 lg:py-16"
     >
       <Container>
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <div className=" max-w-3xl text-center">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-strong">
-                About Me
-              </p>
-
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-text sm:text-4xl lg:text-5xl">
-                Thoughtful developer with a strong eye for clean digital
-                products
-              </h2>
-
-              <p className="mt-5 text-base leading-8 text-text-soft sm:text-lg">
-                My path into software development started with structured data,
+                      <SectionIntro
+                        eyebrow="About Me"
+                        title="Thoughtful developer with a strong eye for clean digital
+                products"
+              description="My path into software development started with structured data,
                 precision, and complex systems. Today, I use that analytical
-                mindset to build modern web and mobile applications.
-              </p>
-            </div>
-          </Reveal>
+                mindset to build modern web and mobile applications."
+                      />
+                    </Reveal>
 
           <Reveal delay={0.08}>
             <div className="mt-12 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
