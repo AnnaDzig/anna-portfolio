@@ -25,37 +25,49 @@ export default function Projects() {
           <div className="grid gap-6 lg:grid-cols-2">
             {projects.map((project, index) => (
               <Reveal key={project.title} delay={index * 0.1}>
-              <article
-                key={project.title}
-                className="flex h-full flex-col rounded-[2rem] border border-border bg-surface p-5 shadow-sm transition-transform duration-300 hover:-translate-y-1 sm:p-6"
-              >
-                <div className="flex flex-1 flex-col gap-5">
-                  <div className="flex flex-col gap-3">
-                    <h3 className="text-xl font-semibold text-text sm:text-2xl">
-                      {project.title}
-                    </h3>
+            <article
+  className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-border bg-surface shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+>
+  {/* IMAGE */}
+  <div className="relative h-48 w-full overflow-hidden">
+    <img
+      src={project.image}
+      alt={project.title}
+      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+    />
 
-                    <p className="text-sm leading-6 text-text-soft sm:text-base sm:leading-7">
-                      {project.description}
-                    </p>
-                  </div>
+    {/* overlay */}
+    <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/10" />
+  </div>
 
-                  <ul className="flex flex-wrap gap-3">
-                    {project.stack.map((item) => (
-                      <li
-                        key={item}
-                        className="rounded-full bg-surface-soft px-4 py-2 text-sm font-medium text-text-soft"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+  {/* CONTENT */}
+  <div className="flex flex-1 flex-col gap-5 p-5 sm:p-6">
+    <div className="flex flex-col gap-3">
+      <h3 className="text-xl font-semibold text-text sm:text-2xl">
+        {project.title}
+      </h3>
 
-                <div className="pt-6">
-                  <Button href={project.link}>View Project</Button>
-                </div>
-                </article>
+      <p className="text-sm leading-6 text-text-soft sm:text-base sm:leading-7">
+        {project.description}
+      </p>
+    </div>
+
+    <ul className="flex flex-wrap gap-2">
+      {project.stack.map((item) => (
+        <li
+          key={item}
+          className="rounded-full bg-surface-soft px-3 py-1 text-xs font-medium text-text-soft sm:text-sm"
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
+
+    <div className="mt-auto pt-4">
+      <Button href={project.link}>View Project</Button>
+    </div>
+  </div>
+</article>
                 </Reveal>
             ))}
           </div>
