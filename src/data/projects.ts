@@ -1,4 +1,5 @@
-import tandemImage from '../assets/projects/tandem-light.png';
+import tandemImage from '../assets/projects/tandem.png';
+import kazbooImage from '../assets/projects/kazboo.png';
 import photographerPortfolioImage from '../assets/projects/photo-portfolio.png';
 export const projects = [
   {
@@ -15,7 +16,7 @@ export const projects = [
       'A mobile social platform built with React Native and Expo, focused on real-world product functionality, backend integration, and practical problem-solving under technical constraints.',
     stack: ['React Native', 'Expo', 'TypeScript', 'REST API'],
     link: '#',
-    image: '/assets/projects/kazboo.png',
+    image: kazbooImage,
   },
   {
     title: 'StopBlodning.dk',
