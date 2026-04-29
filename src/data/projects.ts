@@ -15,7 +15,7 @@ export const projects = [
     description:
       'A mobile social platform built with React Native and Expo, focused on real-world product functionality, backend integration, and practical problem-solving under technical constraints.',
     stack: ['React Native', 'Expo', 'TypeScript', 'REST API'],
-    link: '#',
+    link: 'projects/kazboo',
     image: kazbooImage,
   },
   {

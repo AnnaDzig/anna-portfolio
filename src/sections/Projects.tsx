@@ -26,7 +26,7 @@ export default function Projects() {
               <Reveal key={project.title} delay={index * 0.1}>
                 <article className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-border bg-surface shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                   {/* IMAGE */}
-                  <div className="relative h-68 w-full overflow-hidden">
+                  <div className="relative h-78 w-full overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}

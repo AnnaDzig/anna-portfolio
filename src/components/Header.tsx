@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 
+const base = import.meta.env.BASE_URL;
+
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Tech', href: '#tech' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: `${base}#about` },
+  { label: 'Tech', href: `${base}#tech` },
+  { label: 'Projects', href: `${base}#projects` },
+  { label: 'Experience', href: `${base}#experience` },
+  { label: 'Contact', href: `${base}#contact` },
 ];
 
 export default function Header() {
