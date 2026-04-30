@@ -2,25 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="icon" type="image/svg+xml" href="/anna-portfolio/favicon.svg" />
+
     <script>
       (() => {
         const storedTheme = localStorage.getItem('theme');
         const systemDark = window.matchMedia(
           '(prefers-color-scheme: dark)',
         ).matches;
+
         const resolvedTheme =
           storedTheme === 'light' || storedTheme === 'dark'
             ? storedTheme
             : systemDark
               ? 'dark'
               : 'light';
-        document.documentElement.dataset.theme = resolvedTheme;
+
+        document.documentElement.setAttribute('data-theme', resolvedTheme);
       })();
     </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>anna-portfolio</title>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
