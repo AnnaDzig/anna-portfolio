@@ -4,15 +4,14 @@
     <meta charset="utf-8" />
     <title>Redirect</title>
     <script>
-      // Redirect to index.html while keeping the path
       const path = window.location.pathname.replace('/anna-portfolio', '');
-      const newUrl =
-        '/anna-portfolio/?redirect=' +
-        encodeURIComponent(
-          path + window.location.search + window.location.hash,
-        );
 
-      window.location.replace(newUrl);
+      window.location.replace(
+        '/anna-portfolio/?redirect=' +
+          encodeURIComponent(
+            path + window.location.search + window.location.hash,
+          ),
+      );
     </script>
   </head>
   <body></body>
