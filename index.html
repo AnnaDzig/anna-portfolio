@@ -2,27 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <link rel="icon" type="image/svg+xml" href="/anna-portfolio/favicon.svg" />
+
     <script>
       (() => {
         const storedTheme = localStorage.getItem('theme');
         const systemDark = window.matchMedia(
           '(prefers-color-scheme: dark)',
         ).matches;
+
         const resolvedTheme =
           storedTheme === 'light' || storedTheme === 'dark'
             ? storedTheme
             : systemDark
               ? 'dark'
               : 'light';
-        document.documentElement.dataset.theme = resolvedTheme;
+
+        document.documentElement.setAttribute('data-theme', resolvedTheme);
       })();
     </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>anna-portfolio</title>
     <script type="module" crossorigin src="/anna-portfolio/assets/index-BHqd9gbU.js"></script>
     <link rel="stylesheet" crossorigin href="/anna-portfolio/assets/index-rMjscKIu.css">
   </head>
+
   <body>
     <div id="root"></div>
   </body>
