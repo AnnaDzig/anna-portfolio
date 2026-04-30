@@ -4,12 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script>
-      (()=>{
+      (() => {
         const storedTheme = localStorage.getItem('theme');
-        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const resolvedTheme = storedTheme === "light" || storedTheme === "dark" ? storedTheme : systemDark ? "dark" : "light";
-        document.documentElement.sdataset.theme = resolvedTheme;
-})();
+        const systemDark = window.matchMedia(
+          '(prefers-color-scheme: dark)',
+        ).matches;
+        const resolvedTheme =
+          storedTheme === 'light' || storedTheme === 'dark'
+            ? storedTheme
+            : systemDark
+              ? 'dark'
+              : 'light';
+        document.documentElement.dataset.theme = resolvedTheme;
+      })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>anna-portfolio</title>
