@@ -2,6 +2,8 @@ import Container from '../components/Container';
 import Reveal from '../components/Reveal';
 import Button from '../components/Button';
 import kazbooImage2 from '../assets/projects/kazboo2.png';
+import SectionIntro from '../components/SectionIntro';
+import { kazbooInfoCards } from '../data/kazbooInfoCards';
 
 const techStack = [
   'React Native',
@@ -19,14 +21,14 @@ const techStack = [
   'AWS S3',
   '.NET (C# Backend)',
 ];
-
-function InfoCard({
-  title,
-  children,
-}: {
-  title: string;
+type InfoCardProps = {
+  title?: string;
+  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  image?: string;
   children: React.ReactNode;
-}) {
+};
+
+function InfoCard({ title, icon: Icon, image, children }: InfoCardProps) {
   return (
     <div className="group relative overflow-hidden rounded-[2rem] border border-border bg-surface p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8">
       <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -34,7 +36,22 @@ function InfoCard({
       </div>
 
       <div className="relative z-10">
-        <h2 className="text-2xl font-semibold">{title}</h2>
+        <div className="mb-4 flex items-center gap-3">
+          {Icon && (
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-border bg-surface-soft transition-transform duration-300 group-hover:scale-105">
+              <Icon className="h-7 w-7 text-text-soft transition-colors duration-300 group-hover:text-primary" />
+            </div>
+          )}
+
+          {image && (
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-border bg-surface-soft transition-transform duration-300 group-hover:scale-105">
+              <img src={image} alt="" className="h-8 w-8 object-contain" />
+            </div>
+          )}
+
+          <h2 className="text-2xl font-semibold">{title}</h2>
+        </div>
+
         {children}
       </div>
     </div>
@@ -142,139 +159,104 @@ export default function KazbooProjectPage() {
                   ))}
                 </ul>
               </InfoCard>
-              <div className="mt-6 grid gap-6 md:grid-cols-2">
-                <InfoCard title="Architecture & decisions">
-                  <p className="mt-4 leading-7 text-text-soft">
-                    The app used Expo Router for navigation and Redux Toolkit
-                    for global state management, primarily handling
-                    authentication, user profile data, and shared app state.
-                  </p>
 
-                  <p className="mt-4 leading-7 text-text-soft">
-                    While React Context was initially considered, Redux Toolkit
-                    was chosen due to the growing complexity of shared state
-                    across multiple screens. It provided better structure,
-                    scalability, and improved debugging with Redux DevTools.
-                  </p>
+              <div className="mt14 pt-6 flex flex-col gap-8">
+                <Reveal>
+                  <SectionIntro
+                    eyebrow="Project Details"
+                    title="Architecture, quality, and production experience"
+                    description="Key technical decisions, production challenges, and lessons learned while working on KazbooApp."
+                  />
+                </Reveal>
 
-                  <p className="mt-4 leading-7 text-text-soft">
-                    Authentication tokens were securely stored using
-                    expo-secure-store, ensuring proper session persistence and
-                    secure handling of user data.
-                  </p>
-                </InfoCard>
+                <div className="mt-6 grid gap-6 md:grid-cols-2">
+                  {kazbooInfoCards.map((card) => {
+                    const Icon = card.icon;
 
-                <InfoCard title="Production experience">
-                  <p className="mt-4 leading-7 text-text-soft">
-                    I worked on resolving cross-platform issues between iOS and
-                    Android, particularly related to layout behavior, SafeArea
-                    handling, and responsive design.
-                  </p>
+                    return (
+                      <InfoCard key={card.title}>
+                        <div className="mb-4 flex items-center gap-3">
+                          <div className="flex h-16 w-16 items-center justify-center rounded-xl border border-border bg-surface-soft">
+                            <Icon className="h-36 w-36 text-text-soft group-hover:text-primary transition-colors duration-300" />
+                          </div>
 
-                  <p className="mt-4 leading-7 text-text-soft">
-                    Using NativeWind, I adjusted layout structures and styling
-                    logic to ensure consistent UI across devices. These
-                    improvements significantly enhanced the overall user
-                    experience.
-                  </p>
-                </InfoCard>
-
-                <InfoCard title="Code quality">
-                  <p className="mt-4 leading-7 text-text-soft">
-                    As the application evolved, I refactored larger components
-                    into smaller, reusable ones to improve maintainability and
-                    readability.
-                  </p>
-
-                  <p className="mt-4 leading-7 text-text-soft">
-                    We followed a clear separation between local UI state and
-                    global state in Redux, which helped reduce unnecessary
-                    re-renders and kept the architecture clean.
-                  </p>
-
-                  <p className="mt-4 leading-7 text-text-soft">
-                    TypeScript ensured strong type safety across API
-                    interactions, and Jest was used for testing.
-                  </p>
-                </InfoCard>
-                <InfoCard title="What I learned">
-                  <p className="mt-4 leading-7 text-text-soft text-left">
-                    This project gave me real production experience, working not
-                    only on features, but also on maintaining and scaling an
-                    application used by real users.
-                  </p>
-
-                  <p className="mt-4 leading-7 text-text-soft text-left">
-                    I strengthened my skills in handling async flows, debugging
-                    complex state issues, and building reliable cross-platform
-                    mobile applications.
-                  </p>
-
-                  <p className="mt-4 leading-7 text-text-soft text-left">
-                    Most importantly, I learned to think beyond implementation,
-                    focusing on structure, maintainability, and long-term
-                    scalability.
-                  </p>
-                </InfoCard>
-              </div>
-              <div className="mt-5 mb-5 max-w-5xl text-center"></div>
-
-              <InfoCard title="Tech stack">
-                <div className="relative mt-5 overflow-hidden rounded-2xl border border-primary/50 bg-background shadow-[0_0_35px_var(--primary-ring),inset_0_0_25px_rgba(255,255,255,0.03)]">
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_15%,var(--primary-ring),transparent_45%),radial-gradient(circle_at_80%_70%,var(--primary-ring),transparent_50%)] opacity-70" />
-
-                  <div className="relative flex items-center gap-2 border-b border-primary/30 bg-surface-soft/80 px-4 py-3 backdrop-blur-md">
-                    <span className="h-3 w-3 rounded-full bg-primary-deep shadow-[0_0_10px_var(--primary-deep)]" />
-                    <span className="h-3 w-3 rounded-full bg-primary-strong shadow-[0_0_10px_var(--primary-strong)]" />
-                    <span className="h-3 w-3 rounded-full bg-primary shadow-[0_0_10px_var(--primary)]" />
-
-                    <span className="ml-3 text-xs font-semibold tracking-[0.18em] text-text-soft uppercase">
-                      kazboo-terminal
-                    </span>
-                  </div>
-
-                  <div className="relative px-4 py-5 font-mono text-sm sm:px-5">
-                    <p className="font-semibold text-primary drop-shadow-[0_0_8px_var(--primary)]">
-                      KazbooApp OS{' '}
-                      <span className="text-text-soft drop-shadow-none">
-                        [Frontend Build]
-                      </span>
-                    </p>
-
-                    <p className="mt-2 text-text-soft">
-                      Loading technologies used in production...
-                    </p>
-
-                    <p className="mt-5 font-semibold text-primary drop-shadow-[0_0_8px_var(--primary)]">
-                      anna@kazboo:~${' '}
-                      <span className="text-text drop-shadow-[0_0_6px_var(--primary-ring)]">
-                        skills --list
-                      </span>
-                    </p>
-
-                    <div className="mt-4 grid gap-3">
-                      {techStack.map((tech) => (
-                        <div
-                          key={tech}
-                          className="group relative overflow-hidden rounded-xl border border-primary/40 bg-surface/70 px-4 py-3 font-bold tracking-wide text-text shadow-[0_0_14px_var(--primary-ring)] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary hover:bg-surface-soft hover:shadow-[0_0_24px_var(--primary-ring)]"
-                        >
-                          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,transparent,var(--primary-ring),transparent)] opacity-0 transition-opacity duration-300 group-hover:opacity-70" />
-                          <span className="relative text-primary drop-shadow-[0_0_8px_var(--primary)]">
-                            [ok]
-                          </span>{' '}
-                          <span className="relative text-text drop-shadow-[0_0_10px_var(--primary-ring)]">
-                            {tech}
-                          </span>
+                          <h2 className="text-2xl font-semibold">
+                            {card.title}
+                          </h2>
                         </div>
-                      ))}
+
+                        {card.paragraphs.map((paragraph) => (
+                          <p
+                            key={paragraph}
+                            className="mt-4 text-left leading-7 text-text-soft"
+                          >
+                            {paragraph}
+                          </p>
+                        ))}
+                      </InfoCard>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="mt-5 mb-5 max-w-5xl">
+                <InfoCard title="Tech stack">
+                  <div className="relative mt-5 overflow-hidden rounded-2xl border border-primary/50 bg-background shadow-[0_0_35px_var(--primary-ring),inset_0_0_25px_rgba(255,255,255,0.03)]">
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_15%,var(--primary-ring),transparent_45%),radial-gradient(circle_at_80%_70%,var(--primary-ring),transparent_50%)] opacity-70" />
+
+                    <div className="relative flex items-center gap-2 border-b border-primary/30 bg-surface-soft/80 px-4 py-3 backdrop-blur-md">
+                      <span className="h-3 w-3 rounded-full bg-primary-deep shadow-[0_0_10px_var(--primary-deep)]" />
+                      <span className="h-3 w-3 rounded-full bg-primary-strong shadow-[0_0_10px_var(--primary-strong)]" />
+                      <span className="h-3 w-3 rounded-full bg-primary shadow-[0_0_10px_var(--primary)]" />
+
+                      <span className="ml-3 text-xs font-semibold tracking-[0.18em] text-text-soft uppercase">
+                        kazboo-terminal
+                      </span>
                     </div>
 
-                    <p className="mt-5 font-semibold text-primary drop-shadow-[0_0_8px_var(--primary)]">
-                      anna@kazboo:~$ <span className="animate-pulse">_</span>
-                    </p>
+                    <div className="relative px-4 py-5 font-mono text-sm sm:px-5">
+                      <p className="font-semibold text-primary drop-shadow-[0_0_8px_var(--primary)]">
+                        KazbooApp OS{' '}
+                        <span className="text-text-soft drop-shadow-none">
+                          [Frontend Build]
+                        </span>
+                      </p>
+
+                      <p className="mt-2 text-text-soft">
+                        Loading technologies used in production...
+                      </p>
+
+                      <p className="mt-5 font-semibold text-primary drop-shadow-[0_0_8px_var(--primary)]">
+                        anna@kazboo:~${' '}
+                        <span className="text-text drop-shadow-[0_0_6px_var(--primary-ring)]">
+                          skills --list
+                        </span>
+                      </p>
+
+                      <div className="mt-4 grid gap-3">
+                        {techStack.map((tech) => (
+                          <div
+                            key={tech}
+                            className="group relative overflow-hidden rounded-xl border border-primary/40 bg-surface/70 px-4 py-3 font-bold tracking-wide text-text shadow-[0_0_14px_var(--primary-ring)] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary hover:bg-surface-soft hover:shadow-[0_0_24px_var(--primary-ring)]"
+                          >
+                            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,transparent,var(--primary-ring),transparent)] opacity-0 transition-opacity duration-300 group-hover:opacity-70" />
+                            <span className="relative text-primary drop-shadow-[0_0_8px_var(--primary)]">
+                              [ok]
+                            </span>{' '}
+                            <span className="relative text-text drop-shadow-[0_0_10px_var(--primary-ring)]">
+                              {tech}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <p className="mt-5 font-semibold text-primary drop-shadow-[0_0_8px_var(--primary)]">
+                        anna@kazboo:~$ <span className="animate-pulse">_</span>
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </InfoCard>
+                </InfoCard>
+              </div>
 
               <div className="mt-10 flex flex-wrap gap-4">
                 <Button
