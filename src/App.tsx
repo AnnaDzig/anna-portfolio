@@ -15,7 +15,7 @@ const params = new URLSearchParams(window.location.search);
 const redirect = params.get('redirect');
 
 if (redirect) {
-  window.history.replaceState(null, '', redirect);
+  window.history.replaceState(null, '', `/anna-portfolio${redirect}`);
 }
 
 function HomePage() {
