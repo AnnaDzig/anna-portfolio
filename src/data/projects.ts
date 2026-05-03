@@ -1,6 +1,7 @@
 import tandemImage from '../assets/projects/tandem.png';
 import kazbooImage from '../assets/projects/kazboo.png';
 import photographerPortfolioImage from '../assets/projects/photo-portfolio.png';
+
 export const projects = [
   {
     title: 'Tandem Widget Trainer',
