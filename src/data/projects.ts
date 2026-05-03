@@ -1,7 +1,7 @@
 import tandemImage from '../assets/projects/tandem.png';
 import kazbooImage from '../assets/projects/kazboo.png';
 import photographerPortfolioImage from '../assets/projects/photo-portfolio.png';
-
+import stopbleedingImage from '../assets/projects/stop-bleeding.png';
 export const projects = [
   {
     title: 'Tandem Widget Trainer',
@@ -20,12 +20,12 @@ export const projects = [
     image: kazbooImage,
   },
   {
-    title: 'StopBlodning.dk',
+    title: 'StopBleeding.dk',
     description:
       'A website project rebuilt with Next.js, focused on responsive layout, clean UI, and modern frontend structure while preserving the original design direction.',
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     link: 'https://stop-bleeding-kxnhttmml-annadzigs-projects.vercel.app/',
-    image: '/assets/projects/stopblodning.png',
+    image: stopbleedingImage,
   },
   {
     title: 'Inventory System',
