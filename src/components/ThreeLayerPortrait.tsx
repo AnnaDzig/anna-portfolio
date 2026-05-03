@@ -26,7 +26,7 @@ export default function ThreeLayerPortrait() {
   const [dragProgress, setDragProgress] = useState(0);
   const [direction, setDirection] = useState<Direction>(null);
   const [isDragging, setIsDragging] = useState(false);
-  const [restingPosition, setRestingPosition] = useState(0.56);
+  const [restingPosition, setRestingPosition] = useState(0.82);
 
   const startXRef = useRef(0);
 
