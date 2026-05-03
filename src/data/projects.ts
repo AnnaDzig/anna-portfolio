@@ -23,7 +23,7 @@ export const projects = [
     description:
       'A website project rebuilt with Next.js, focused on responsive layout, clean UI, and modern frontend structure while preserving the original design direction.',
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    link: '#',
+    link: 'https://stop-bleeding-kxnhttmml-annadzigs-projects.vercel.app/',
     image: '/assets/projects/stopblodning.png',
   },
   {
