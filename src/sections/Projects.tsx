@@ -61,7 +61,13 @@ export default function Projects() {
                     </ul>
 
                     <div className="mt-auto pt-4">
-                      <Button href={project.link}>View Project</Button>
+                      <Button
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Project
+                      </Button>
                     </div>
                   </div>
                 </article>

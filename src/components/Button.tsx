@@ -2,12 +2,15 @@ type ButtonProps = {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary';
   href?: string;
+  target?: React.HTMLAttributeAnchorTarget;
+  rel?: string;
 };
-
 export default function Button({
   children,
   variant = 'primary',
   href,
+  target,
+  rel,
 }: ButtonProps) {
   const baseClasses =
     'inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition sm:w-auto sm:px-6';
@@ -22,7 +25,7 @@ export default function Button({
 
   if (href) {
     return (
-      <a href={href} className={className}>
+      <a href={href} target={target} rel={rel} className={className}>
         {children}
       </a>
     );
