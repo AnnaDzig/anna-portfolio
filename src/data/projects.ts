@@ -2,6 +2,7 @@ import tandemImage from '../assets/projects/tandem.png';
 import kazbooImage from '../assets/projects/kazboo.png';
 import photographerPortfolioImage from '../assets/projects/photo-portfolio.png';
 import stopbleedingImage from '../assets/projects/stop-bleeding.png';
+import followTheMoneyImage from '../assets/projects/crypto-graph.png';
 export const projects = [
   {
     title: 'Tandem Widget Trainer',
@@ -40,7 +41,7 @@ export const projects = [
       'React Cytoscape.js',
     ],
     link: 'https://annadzig.github.io/Follow-the-Money/',
-    image: '/assets/projects/crypto-graph.png',
+    image: followTheMoneyImage,
   },
   {
     title: 'Photographer Portfolio',
