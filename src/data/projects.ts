@@ -28,12 +28,19 @@ export const projects = [
     image: stopbleedingImage,
   },
   {
-    title: 'Inventory System',
+    title: 'Follow the Money',
     description:
-      'A full-stack ASP.NET Core MVC project for managing tools, warehouses, and users, built with a focus on clean architecture, authentication, and scalable structure.',
-    stack: ['C#', '.NET', 'ASP.NET Core MVC', 'SQLite'],
-    link: '#',
-    image: '/assets/projects/inventory.png',
+      'Follow the Money is a React and TypeScript graph visualization demo inspired by crypto investigation workflows. It shows wallets, clusters, mixers, services, and exchanges as an interactive transaction graph, with clickable nodes, risk indicators, entity details, and transaction paths.',
+    stack: [
+      'React',
+      'TypeScript',
+      'Vite',
+      'Cytoscape.js',
+      'Tailwind CSS',
+      'React Cytoscape.js',
+    ],
+    link: 'https://annadzig.github.io/Follow-the-Money/',
+    image: '/assets/projects/crypto-graph.png',
   },
   {
     title: 'Photographer Portfolio',
@@ -42,5 +49,13 @@ export const projects = [
     stack: ['HTML', 'CSS', 'JavaScript'],
     link: 'https://annadzig.github.io/Portfolio/portfolio/',
     image: photographerPortfolioImage,
+  },
+  {
+    title: 'Inventory System',
+    description:
+      'A full-stack ASP.NET Core MVC project for managing tools, warehouses, and users, built with a focus on clean architecture, authentication, and scalable structure.',
+    stack: ['C#', '.NET', 'ASP.NET Core MVC', 'SQLite'],
+    link: '#',
+    image: '/assets/projects/inventory.png',
   },
 ];
