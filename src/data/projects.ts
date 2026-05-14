@@ -3,6 +3,7 @@ import kazbooImage from '../assets/projects/kazboo.png';
 import photographerPortfolioImage from '../assets/projects/photo-portfolio.png';
 import stopbleedingImage from '../assets/projects/stop-bleeding.png';
 import followTheMoneyImage from '../assets/projects/crypto-graph.png';
+import professionalPortfolioImage from '../assets/projects/professional-portfolio.png';
 export const projects = [
   {
     title: 'Tandem Widget Trainer',
@@ -29,6 +30,14 @@ export const projects = [
     image: stopbleedingImage,
   },
   {
+    title: 'Professional Photographer',
+    description:
+      'A responsive photography portfolio website built with HTML, CSS, and JavaScript. The project presents a modern visual layout with a hero section, about section, animated portfolio gallery, pricing cards, FAQ section, and contact form. It focuses on clean structure, smooth interactions, and an elegant editorial-style design for showcasing photography work.',
+    stack: ['HTML', 'CSS', 'JavaScript'],
+    link: 'https://annadzig.github.io/Photographer-portfolio/',
+    image: photographerPortfolioImage,
+  },
+  {
     title: 'Follow the Money',
     description:
       'Follow the Money is a React and TypeScript graph visualization demo inspired by crypto investigation workflows. It shows wallets, clusters, mixers, services, and exchanges as an interactive transaction graph, with clickable nodes, risk indicators, entity details, and transaction paths.',
@@ -44,12 +53,12 @@ export const projects = [
     image: followTheMoneyImage,
   },
   {
-    title: 'Photographer Portfolio',
+    title: 'Professional Photographer',
     description:
       'A modern and elegant photography portfolio website showcasing visual storytelling through curated galleries, video content, and a refined user experience. Designed to highlight artistic work while providing clear navigation, pricing information, and contact options.',
     stack: ['HTML', 'CSS', 'JavaScript'],
     link: 'https://annadzig.github.io/Portfolio/portfolio/',
-    image: photographerPortfolioImage,
+    image: professionalPortfolioImage,
   },
   {
     title: 'Inventory System',
