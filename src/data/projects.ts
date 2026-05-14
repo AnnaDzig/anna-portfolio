@@ -34,7 +34,7 @@ export const projects = [
     description:
       'A responsive photography portfolio website built with HTML, CSS, and JavaScript. The project presents a modern visual layout with a hero section, about section, animated portfolio gallery, pricing cards, FAQ section, and contact form. It focuses on clean structure, smooth interactions, and an elegant editorial-style design for showcasing photography work.',
     stack: ['HTML', 'CSS', 'JavaScript'],
-    link: 'https://annadzig.github.io/Photographer-portfolio/',
+    link: 'https://annadzig.github.io/Portfolio/portfolio/',
     image: photographerPortfolioImage,
   },
   {
