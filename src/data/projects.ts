@@ -53,11 +53,11 @@ export const projects = [
     image: followTheMoneyImage,
   },
   {
-    title: 'Professional Photographer',
+    title: 'Photographer Portfolio',
     description:
       'A modern and elegant photography portfolio website showcasing visual storytelling through curated galleries, video content, and a refined user experience. Designed to highlight artistic work while providing clear navigation, pricing information, and contact options.',
     stack: ['HTML', 'CSS', 'JavaScript'],
-    link: 'https://annadzig.github.io/Portfolio/portfolio/',
+    link: 'https://annadzig.github.io/Photographer-portfolio/',
     image: professionalPortfolioImage,
   },
   {
