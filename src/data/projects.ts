@@ -65,7 +65,7 @@ export const projects = [
     description:
       'A full-stack ASP.NET Core MVC project for managing tools, warehouses, and users, built with a focus on clean architecture, authentication, and scalable structure.',
     stack: ['C#', '.NET', 'ASP.NET Core MVC', 'SQLite'],
-    link: '#',
+    link: 'https://github.com/AnnaDzig/InventorySystem',
     image: '/assets/projects/inventory.png',
   },
 ];
