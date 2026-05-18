@@ -4,6 +4,7 @@ import photographerPortfolioImage from '../assets/projects/photo-portfolio.png';
 import stopbleedingImage from '../assets/projects/stop-bleeding.png';
 import followTheMoneyImage from '../assets/projects/crypto-graph.png';
 import professionalPortfolioImage from '../assets/projects/professional-portfolio.png';
+import inventorySystemImage from '../assets/projects/inventory.png';
 export const projects = [
   {
     title: 'Tandem Widget Trainer',
@@ -66,6 +67,6 @@ export const projects = [
       'A full-stack ASP.NET Core MVC project for managing tools, warehouses, and users, built with a focus on clean architecture, authentication, and scalable structure.',
     stack: ['C#', '.NET', 'ASP.NET Core MVC', 'SQLite'],
     link: 'https://github.com/AnnaDzig/InventorySystem',
-    image: '/assets/projects/inventory.png',
+    image: inventorySystemImage,
   },
 ];
