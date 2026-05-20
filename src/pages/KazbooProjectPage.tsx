@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Container from '../components/Container';
 import Reveal from '../components/Reveal';
 import Button from '../components/Button';
@@ -70,6 +71,7 @@ function InfoCard({ title, icon: Icon, image, children }: InfoCardProps) {
 }
 
 export default function KazbooProjectPage() {
+  const [openContribution, setOpenContribution] = useState<number | null>(null);
   return (
     <main className="overflow-x-hidden bg-background text-text">
       <section className="scroll-mt-24 py-14 sm:py-20 lg:py-24">
@@ -137,29 +139,95 @@ export default function KazbooProjectPage() {
               <InfoCard title="My contribution">
                 <ul className="mt-5 space-y-3">
                   {[
-                    'Implemented and maintained core mobile features using React Native and Expo',
-                    'Integrated REST APIs using Axios and handled async data flows',
-                    'Worked on user profile updates, social features, and media uploads',
-                    'Implemented video upload logic using expo-av to extract duration metadata',
-                    'Built forms with Formik, including validation and error handling',
-                    'Collaborated closely with backend developers and designers',
-                  ].map((item, index) => (
-                    <li
-                      key={item}
-                      className="group relative overflow-hidden rounded-lg border border-border bg-surface/60 px-4 py-3 text-text-soft backdrop-blur-sm opacity-0 transition-all duration-300 animate-[fadeSlideIn_0.5s_ease-out_forwards] hover:-translate-y-0.5 hover:border-primary hover:bg-surface-soft"
-                      style={{ animationDelay: `${index * 120}ms` }}
-                    >
-                      <div className="pointer-events-none absolute left-0 top-0 h-full w-[2px] bg-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    {
+                      title:
+                        'Implemented and maintained core mobile features using React Native and Expo',
+                      description:
+                        'I worked on real user-facing functionality inside a production mobile app, including screens, reusable UI parts, and feature improvements across the app.',
+                    },
+                    {
+                      title:
+                        'Integrated REST APIs using Axios and handled async data flows',
+                      description:
+                        'I connected the mobile app with backend endpoints, handled loading and error states, and made sure data was displayed correctly across different screens.',
+                    },
+                    {
+                      title:
+                        'Worked on user profile updates, social features, and media uploads',
+                      description:
+                        'I contributed to profile editing, friend-related functionality, and upload flows where users could add or update their content.',
+                    },
+                    {
+                      title:
+                        'Implemented video upload logic using expo-av to extract duration metadata',
+                      description:
+                        'I worked with video files before upload and used expo-av to read video duration metadata, so the backend received the needed information together with the file.',
+                    },
+                    {
+                      title:
+                        'Built forms with Formik, including validation and error handling',
+                      description:
+                        'I created and maintained forms with validation, clear feedback, and error handling to make user input more reliable.',
+                    },
+                    {
+                      title:
+                        'Collaborated closely with backend developers and designers',
+                      description:
+                        'I worked with backend developers around API behavior and with designers to keep the implementation close to the expected product experience.',
+                    },
+                  ].map((item, index) => {
+                    const isOpen = openContribution === index;
 
-                      <div className="pointer-events-none absolute inset-0 translate-x-[-120%] bg-[linear-gradient(120deg,transparent,var(--primary-ring),transparent)] opacity-0 transition-all duration-700 group-hover:translate-x-[120%] group-hover:opacity-70" />
+                    return (
+                      <li
+                        key={item.title}
+                        className="group relative overflow-hidden rounded-lg border border-border bg-surface/60 px-4 py-3 text-text-soft backdrop-blur-sm opacity-0 transition-all duration-300 animate-[fadeSlideIn_0.5s_ease-out_forwards] hover:-translate-y-0.5 hover:border-primary hover:bg-surface-soft"
+                        style={{ animationDelay: `${index * 120}ms` }}
+                      >
+                        <div className="pointer-events-none absolute left-0 top-0 h-full w-[2px] bg-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                      <span className="relative mr-2 text-primary drop-shadow-[0_0_6px_var(--primary)]">
-                        ›
-                      </span>
+                        <div className="pointer-events-none absolute inset-0 translate-x-[-120%] bg-[linear-gradient(120deg,transparent,var(--primary-ring),transparent)] opacity-0 transition-all duration-700 group-hover:translate-x-[120%] group-hover:opacity-70" />
 
-                      <span className="relative">{item}</span>
-                    </li>
-                  ))}
+                        <div className="relative flex items-start gap-3">
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setOpenContribution(isOpen ? null : index)
+                            }
+                            aria-expanded={isOpen}
+                            aria-label={
+                              isOpen ? 'Hide explanation' : 'Show explanation'
+                            }
+                            className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-primary/40 text-primary drop-shadow-[0_0_6px_var(--primary)] transition-all duration-300 hover:bg-primary hover:text-white ${
+                              isOpen ? 'rotate-90 bg-primary text-white' : ''
+                            }`}
+                          >
+                            ›
+                          </button>
+
+                          <div className="min-w-0">
+                            <p className="text-sm leading-6 sm:text-base">
+                              {item.title}
+                            </p>
+
+                            <div
+                              className={`grid transition-all duration-300 ease-out ${
+                                isOpen
+                                  ? 'mt-3 grid-rows-[1fr] opacity-100'
+                                  : 'grid-rows-[0fr] opacity-0'
+                              }`}
+                            >
+                              <div className="overflow-hidden">
+                                <p className="border-l border-primary/40 pl-4 text-sm leading-6 text-text-soft/80">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    );
+                  })}
                 </ul>
               </InfoCard>
             </Reveal>
