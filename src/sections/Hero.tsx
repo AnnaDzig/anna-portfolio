@@ -5,6 +5,7 @@ import ThreeLayerPortrait from '../components/ThreeLayerPortrait';
 import Github from '../assets/icons/github.svg?react';
 import Linkedin from '../assets/icons/linkedin.svg?react';
 import Mail from '../assets/icons/mail.svg?react';
+import LetterGlitch from '../components/LetterGlitch';
 
 const quickStats = [
   { value: '3+', label: 'Years building products' },
@@ -38,9 +39,20 @@ export default function Hero() {
       className="relative overflow-hidden bg-background py-10 text-text sm:py-14 lg:py-20"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.24] dark:opacity-[0.28]">
+          <LetterGlitch
+            glitchColors={['#c98497', '#b86f86', '#efa6b8']}
+            glitchSpeed={65}
+            centerVignette={false}
+            outerVignette
+            smooth
+          />
+        </div>
+
         <div className="absolute left-[-7rem] top-[-5rem] h-72 w-72 rounded-full bg-primary/16 blur-3xl" />
         <div className="absolute right-[-5rem] top-[12%] h-80 w-80 rounded-full bg-primary-strong/12 blur-3xl" />
         <div className="absolute bottom-[-7rem] left-[18%] h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+
         <div className="absolute inset-0 opacity-[0.12] [background-image:linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] [background-size:88px_88px]" />
       </div>
 
