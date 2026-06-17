@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Container from '../components/Container';
 import SectionIntro from '../components/SectionIntro';
 import Reveal from '../components/Reveal';
+import Button from '../components/Button';
 import TechSphere from '../components/TechSphere';
 
 export default function Contact() {
@@ -94,17 +95,17 @@ export default function Contact() {
                         placeholder="Message"
                         required
                         rows={5}
-                        className="w-full resize-none rounded-2xl border border-border bg-surface-soft px-5 py-4 text-base font-medium text-text outline-none transition placeholder:text-text-soft/70 focus:border-primary focus:bg-surface"
+                        className="w-full resize-none rounded-2xl border border-border bg-surface-soft px-4 py-4 text-base font-medium text-text outline-none transition placeholder:text-text-soft/70 focus:border-primary focus:bg-surface"
                       />
                     </label>
 
                     <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
-                      <button
+                      <Button
                         type="submit"
-                        className="inline-flex w-full items-center justify-center rounded-full bg-primary px-7 py-3 text-sm font-semibold text-text shadow-sm transition hover:-translate-y-0.5 hover:bg-primary/90 sm:w-auto"
+                        className="!border !border-border !bg-surface-soft px-7 font-semibold !text-text shadow-sm hover:-translate-y-0.5 hover:!bg-primary/90"
                       >
                         Send Message
-                      </button>
+                      </Button>
 
                       <a
                         href="mailto:anna.soft.dev@gmail.com"
