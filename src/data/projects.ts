@@ -5,7 +5,24 @@ import stopbleedingImage from '../assets/projects/stop-bleeding.png';
 import followTheMoneyImage from '../assets/projects/crypto-graph.png';
 import professionalPortfolioImage from '../assets/projects/professional-portfolio.png';
 import inventorySystemImage from '../assets/projects/inventory.png';
+import apiFluxImage from '../assets/projects/swager-api.png';
 export const projects = [
+  {
+    title: 'ApiFlux',
+    description:
+      'A full-stack OpenAPI workspace for editing and validating JSON or YAML specifications, exploring interactive API documentation, executing requests through a server-side proxy, and securely saving user schemas and history.',
+    stack: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Firebase',
+      'Firestore',
+      'OpenAPI',
+      'Vitest',
+    ],
+    link: 'https://swagger-editor-app-rho.vercel.app/',
+    image: apiFluxImage,
+  },
   {
     title: 'Tandem Widget Trainer',
     description:
